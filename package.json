@@ -1,0 +1,49 @@
+{
+  "name": "grunt-file-regex-rename",
+  "description": "Rename files matching regulaur expression",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kashiif/grunt-file-regex-rename",
+  "author": {
+    "name": "Kashif Iqbal Khan",
+    "url": "http://www.kashiif.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kashiif/grunt-file-regex-rename.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kashiif/grunt-file-regex-rename/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kashiif/grunt-file-regex-rename/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt": "~0.4.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "contributors": [
+  ],
+
+  "readmeFilename": "README.md",
+  "_id": "grunt-file-regex-rename@0.1.0",
+
+  "_from": "grunt-file-regex-rename@",
+  "_resolved": "https://registry.npmjs.org/grunt-file-regex-rename/-/grunt-file-regex-rename-0.1.0.tgz"
+}
