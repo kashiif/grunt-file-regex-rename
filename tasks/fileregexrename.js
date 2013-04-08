@@ -36,8 +36,6 @@ module.exports = function(grunt) {
 		var filename  = path.basename(src),
 			renamed = multi_str_replace(filename, options.replacements);
 
-		//grunt.log.write(filename + ' ' + renamed + '\n');
-
 		// Renaming the file
 		if (filename != renamed) {
 		  fs.renameSync(src, path.resolve(path.dirname(src), renamed));
