@@ -36,9 +36,18 @@ module.exports = function(grunt) {
 		var filename  = path.basename(src),
 			renamed = multi_str_replace(filename, options.replacements);
 
-		// Renaming the file
+		  // Renaming the file
 		if (filename != renamed) {
-		  fs.renameSync(src, path.resolve(path.dirname(src), renamed));
+		  
+		  var srcDir = path.dirname(src),
+			  destDir = path.dirname(f.dest);
+		
+		  if (srcDir == destDir) {
+			fs.renameSync(src, path.resolve(path.dirname(src), renamed));
+		  }
+		  else {
+			grunt.file.copy(src, path.resolve(destDir, renamed));
+		  }
 		  grunt.log.write(src + ' ').ok(renamed);
 		}
 	  });
