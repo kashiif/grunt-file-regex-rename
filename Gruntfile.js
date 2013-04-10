@@ -22,30 +22,7 @@ module.exports = function(grunt) {
 		match: 'folder_one/*',
 		version: '1.0.0'
 	},
-	
-    // Configuration to be run (and then tested).
-    copy: {
-      main: {
-        files: [
-          {expand: true, cwd: 'test/fixtures', src: ['*.*'], dest: 'tmp/copy_test_files/'},
-          {expand: true, cwd: 'test/fixtures', src: ['**'], dest: 'tmp/copy_test_mix/'},
-          {expand: true, cwd: 'test/fixtures', src: ['<%= test_vars.match %>'], dest: 'tmp/copy_test_v<%= test_vars.version %>/'}
-        ]
-      },
-
-      flatten: {
-        files: [
-          {expand: true, flatten: true, filter: 'isFile', src: ['test/fixtures/**'], dest: 'tmp/copy_test_flatten/'}
-        ]
-      },
-
-      single: {
-        files: [
-          {src: ['test/fixtures/test.js'], dest: 'tmp/single.js'}
-        ]
-      }
-    },
-	
+		
 	fileregexrename: {
 	  options: {
 		  replacements: [
