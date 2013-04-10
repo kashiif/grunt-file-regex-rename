@@ -21,7 +21,6 @@ exports.fileregexrenameTest = {
 
     test.done();
   },
-  /*
 
   flatten: function(test) {
     'use strict';
@@ -35,19 +34,21 @@ exports.fileregexrenameTest = {
     test.done();
   },
 
-  single1: function(test) {
+  
+  single: function(test) {
     'use strict';
 
     test.expect(1);
 
-    var actual = grunt.file.read('tmp/{date}.txt');
+    var actual = grunt.file.read('tmp/2011-02-25.txt');
     var expected = grunt.file.read('test/expected/2011-02-25.txt');
     test.equal(expected, actual, 'should allow for single file copy');
 
     test.done();
   },
 
-  single2: function(test) {
+  /*
+  rename: function(test) {
     'use strict';
 
     test.expect(1);
@@ -58,5 +59,5 @@ exports.fileregexrenameTest = {
 
     test.done();
   }
-*/  
+  */
 };

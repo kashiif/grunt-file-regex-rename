@@ -81,7 +81,7 @@ module.exports = function(grunt) {
 
       single: {
         files: [
-          {src: ['test/fixtures/test.js'], dest: 'tmp/single.js'}
+          {src: ['test/fixtures/{date}.txt'], dest: 'tmp/**'}
         ]
       }
 	},
