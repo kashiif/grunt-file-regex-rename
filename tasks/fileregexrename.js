@@ -12,6 +12,18 @@ module.exports = function(grunt) {
 
   var fs = require('fs'),
       path = require('path');
+	  
+  // Normalize \\ paths to / paths.
+  var unixifyPath = function(filepath) {
+    if (process.platform === 'win32') {
+	  // Windows?
+	  return filepath.replace(/\\/g, '/');
+	} else {
+	  return filepath;
+	}
+  };
+	  
+	  
   grunt.registerMultiTask('fileregexrename', 'Rename files/folders matching regex pattern.', function() {
 
 	// Merging options with defaults
@@ -29,26 +41,32 @@ module.exports = function(grunt) {
 		}, string);
 	  };
 
-
 	//grunt.log.write(JSON.stringify(options.replacements));
 	this.files.forEach(function(f) {
 	  f.src.forEach(function(src) {
 		var filename  = path.basename(src),
 			renamed = multi_str_replace(filename, options.replacements);
 
-		  // Renaming the file
+		//grunt.log.write('** ' + src + '\n');
+		// Renaming the file
 		if (filename != renamed) {
 		  
-		  var srcDir = path.dirname(src),
-			  destDir = path.dirname(f.dest);
+		  var srcDir = path.resolve(path.dirname(src)),
+			  destDir = path.resolve(path.dirname(f.dest));
 		
 		  if (srcDir == destDir) {
-			fs.renameSync(src, path.resolve(path.dirname(src), renamed));
+			fs.renameSync(src, path.resolve(srcDir, renamed));
 		  }
 		  else {
-			grunt.file.copy(src, path.resolve(destDir, renamed));
+			var dest = path.join(destDir, renamed);
+			if (grunt.file.isDir(src)) {
+				grunt.file.mkdir(path.resolve(dest));
+			}
+			else {
+				grunt.file.copy(src, path.resolve(dest));
+			}
 		  }
-		  grunt.log.write(src + ' ').ok(renamed);
+		  grunt.log.write(src + ' ').ok( unixifyPath( path.join(path.dirname(f.dest), renamed)));
 		}
 	  });
 
