@@ -98,6 +98,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 0.1.0
   - Initial release.
 
+1.0.0
+  - Upgrade to grunt@1.0.1.
+
 ## License
-Copyright (c) 2012 Kashif Iqbal Khan.
+Copyright (c) 2016 Kashif Iqbal Khan.
 Licensed under the MIT license.
