@@ -1,4 +1,4 @@
-# grunt-file-regex-rename
+# grunt-file-regex-rename [![Build Status](https://travis-ci.org/kashiif/grunt-file-regex-rename.svg?branch=master)](https://travis-ci.org/kashiif/grunt-file-regex-rename)
 
 Replaces strings on files by using string or regex patterns. Attempts to be a [String.prototype.replace](http://www.ecma-international.org/ecma-262/5.1/#sec-15.5.4.11) adapter task for your grunt project.
 
